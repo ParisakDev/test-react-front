@@ -1,0 +1,46 @@
+.article{
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .information{
+        width: 60%;
+        padding-right: $base*2;
+        .content{
+
+        }
+    }
+    .cover{
+        width: 30%;
+        padding-left: $base*2;
+        .content{
+            .img-cover{
+                width: 100%;
+                height: auto;
+            }
+            .img{
+                width: 100%;
+            }
+        }
+    }
+    @media only screen and (max-width: $md) {
+        flex-direction: column;
+        .information{
+            width: 100%;
+            padding-right:0 ;
+        }
+        .cover{
+            width: 100%;
+            padding: $base 0;
+            .img-cover{
+                display: none;
+            }
+            .price{
+                flex-direction: column-reverse;
+                align-items: center;
+                p{
+                    margin: $base *2 0;
+                }
+            }
+        }
+    }
+
+}

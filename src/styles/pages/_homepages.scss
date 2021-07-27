@@ -1,0 +1,35 @@
+.homepage-banner{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../assets/img/01coverhenry.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: map-get($color, cg-1 );
+    }
+}
+.homepage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        .para{
+            max-width: 70%;
+            margin: $base auto;
+        }
+    }
+}

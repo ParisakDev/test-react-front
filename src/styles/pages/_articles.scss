@@ -1,0 +1,179 @@
+.articles{
+    height: calc(100% - 73px);
+
+    .wrapper{
+        height: 100%;
+    }
+    .filters{
+        background-color: map-get($color, cg-3 );
+        border-radius: $radius-m;
+        width: 100%;
+        padding: $base*2 $base;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: fx-filters 0.8s linear forwards;
+        z-index: 1;
+        .filter-search{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            .label-search{
+                p{
+                    text-align: center;
+                    color: map-get($color, c-b );
+                    font-family: $ff-futura;
+                    text-transform: uppercase;
+                }
+                input[type='text']{
+                    padding: $base 0 ;
+                    color: map-get($color, c-b );
+                    border-bottom: 1px solid map-get($color, c-b );
+                }
+                .btn-close{
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translateY(-50%);
+                    display: none;
+                    &::before{
+                        background-image: url('../../assets/icons/icon-close-black.png');
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                    }
+                }
+                &.is-active{
+                    .btn-close{
+                        display: block;
+                    }
+                }
+            }
+        }
+        .price-search{
+            margin: 0 $base*3;
+            padding: 0 $base*4;
+            width: 200px;
+            border-left: 1px solid map-get($color, c-b );
+            border-right: 1px solid map-get($color, c-b );
+            .index-search-price{
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                font-family: $ff-futura;
+                color: map-get($color, c-b );
+                margin-top: 2px;
+                white-space: nowrap;
+            }
+        }
+        .order-search{
+
+            &-choice{
+                @include transition;
+                &:hover{
+                    .order-choice{
+                        pointer-events: all;
+                        opacity: 1;
+                    }
+                    .title{
+                        &::after{
+                            transform: translateY(-50%) rotate(90deg);
+                        }
+                    }
+
+                }
+                .title{
+                    position: relative;
+                    cursor: pointer;
+                    @include transition;
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: 0;
+                        height: 10px;
+                        width: 10px;
+                        display: block;
+                        background-image: url('../../assets/icons/icon-arrow-next.png');
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        @include transition;
+                    }
+                }
+                .order-choice{
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    opacity: 0;
+                    pointer-events: none;
+                    background-color: map-get($color, c-w );
+                    padding: $base*2;
+                    @include transition;
+                    .label{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        padding: $base*2 0;
+                        cursor: pointer;
+                        @include transition;
+                        &:hover{
+                            p{
+                                color: map-get($color, c-1 );
+                            }
+                        }
+                        .radio{
+                            margin-right: $base;
+                        }
+                    }
+                }
+            }
+        }
+        @media only screen and (max-width: $md) {
+            max-height: 0px;
+            overflow: hidden;
+            padding: 0px;
+            @include transition;
+            &.is-active{
+                min-height: 0px;
+                max-height: 1000px;
+                padding: $base*3;
+            }
+            .filter-search{
+                display: flex;
+                flex-direction: column;
+                .fields{
+                    margin: $base*3 0;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    .label-search,.price-search,.order-search{
+                        margin: $base*2 0;
+                        border: none;
+                        width: 100%;
+                    }
+                    .order-choice{
+                        position: relative;
+                        top: 0;
+                        opacity: 1;
+                        pointer-events: all;
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+    .section{
+        .content{
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            background-color: map-get($color, cg-4);
+            border-radius: $radius-s;
+        }
+    }
+}

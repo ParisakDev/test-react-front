@@ -1,0 +1,175 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    z-index: 1;
+    padding: $base 0;
+    .wrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav{
+        align-items: flex-end;
+        &-link{
+            margin:0 $base*2;
+            color: map-get($color, c-w );
+            letter-spacing: $base - 5;
+            font-size: $base*3;
+            display: inline-block;
+            line-height: 20px;
+            @include transition;
+            &:hover{
+                transform: scale(1.30);
+                color: map-get($color, c-1 );
+            }
+            &.btn-cart{
+                background-color: transparent;
+                height: min-content;
+                width: min-content;
+                padding: 0;
+                &::before{
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+    }
+    .search-header{
+        height: 35px;
+        width: 35px;
+        position: relative;
+        .search-header-content{
+            width: 35px;
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            top: 0;
+            right: 0;
+            overflow: hidden;
+            @include transition;
+            &.is-active{
+                overflow: unset;
+                justify-content: space-between;
+                width: 280px;
+                .search-header-form{
+                    width: 260px;
+                    opacity: 1;
+                    pointer-events: all;
+                }
+            }
+            .search-header-form{
+                opacity: 0;
+                pointer-events: none;
+                @include transition;
+                .label{
+                    width: 100%;
+                    &.is-active{
+                       .close{
+                           display: block;
+                       } 
+                    }
+                   .close{
+                       display: none;
+                       position: absolute;
+                       right: 0;
+                       top: 50%;
+                       transform: translateY(-50%);
+                   }
+                }
+            }
+        }
+    }
+    .search-cards{
+        display: flex;
+        flex-direction: column;
+        padding: $base;
+        margin: $base 0;
+        max-height: 400px;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: $base 0;
+        z-index: 1;
+        @include overflow-y;
+        .search-cards-item{
+            width: 100% ;
+            background-color: map-get($color, c-b );
+            list-style: none;
+            padding: $base;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start
+        }
+    }
+    @media only screen and (max-width: $md) {
+        .wrapper{
+            .nav{
+                position: fixed;
+                top: 0;
+                left: -100%;
+                height: 100%;
+                width: 100%;
+                background-color: map-get($color, c-w );
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 5;
+                opacity: 0;
+                @include transition;
+                &-link{
+                    color: map-get($color, c-b );
+                    margin: $base*4 0;
+                }
+                .btn-cart{
+                    &::before{
+                        background-image: url('../../assets/icons/icon-cart-mobile.png');
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        
+                    }
+                }
+                &.is-active{
+                    left: 0;
+                    opacity: 1;
+                }
+            }
+            .search-header{
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100%;
+                width: 100%;
+                z-index: 5;
+                padding: $base*2;
+                display: flex;
+                @include transition;
+                .search-header-content{
+                    position: relative;
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    .search-header-form{
+                        opacity: 1;
+                        pointer-events: all;
+                        width: 100%;
+                    }
+                    .search-cards{
+                        position: relative;
+                        top: inherit;
+                        width: max-content;
+                    }
+                }
+                &.is-active{
+                    left: 0;
+                    background-color: map-get($color, c-b );
+                }
+            }
+        }
+    }
+}

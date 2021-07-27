@@ -1,0 +1,131 @@
+.btn {
+    text-decoration: none;
+    width: fit-content;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+
+    &-search{
+
+        height: 35px;
+        width: 35px;
+        cursor: pointer;
+        &::before{
+            content: '';
+            width: 35px;
+            height: 35px;
+            display: block;
+            background-image: url('../../assets/icons/icon-search.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &-link{
+        padding: $base $base*2;
+        color: map-get($color, c-w );
+        border-radius:$radius-s;
+        border:2px solid map-get($color, c-1 );
+        background-color: map-get($color, c-1 );
+        @include box-shadow;
+        @include transition;
+        &:hover{
+            background-color: transparent;
+            color: map-get($color, c-1 );
+        }
+    }
+
+    &-close{
+        height: 16px;
+        width: 16px;
+        cursor: pointer;
+        &::before{
+            content:"";
+            width: 16px;
+            height: 16px;
+            display: block;
+            background-image: url('../../assets/icons/icon-close.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &-delete{
+        height: 17px;
+        width: 17px;
+       border-radius: 50%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       background-color: map-get($color, c-2 );
+      // padding: 3px;
+    }
+    
+    &-cart{
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+        background-color: map-get($color, c-1 );
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        width: min-content;
+        border-radius: $radius-s;
+        padding: $base*3 $base*2;
+        @include transition;
+        &.is-active{
+            background-color: map-get($color, c-2 ); 
+        }
+        &::before{
+            content:"";
+            width: 30px;
+            height: 30px;
+            display: block;
+            background-image: url('../../assets/icons/icon-cart.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &-submit{
+        padding: $base $base*2;
+        border-radius: $radius-s;
+        cursor: pointer;
+        background-color: map-get($color, c-1 );
+        color: map-get($color, c-w );
+    }
+    &-menu-burger-mobile{
+        height: 20px;
+        position: relative;
+        span{
+            display: block;
+            height: 2px;
+            width: 25px;
+            background-color: map-get($color, c-w );
+        }
+        &::before,&::after{
+            height: 2px;
+            width: 25px;
+            background-color: map-get($color, c-w );
+        }
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0%;
+            left: 0;
+        }
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    &-close-side{
+        position: absolute;
+        right: 0;
+    }
+}

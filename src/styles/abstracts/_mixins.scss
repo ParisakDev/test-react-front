@@ -1,0 +1,30 @@
+@mixin transition {
+  transition: all 0.25s ease-in-out;
+}
+@mixin overflow-y {
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    height: 2px;
+    width: 6px;
+    border: none;
+  }
+  /* Track */
+  &::-webkit-scrollbar-track {
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: map-get($color, c-1 );
+    border-radius: 5px;
+  }
+}
+@mixin box-shadow {
+  /*
+  -webkit-box-shadow: 2px 14px 35px -10px rgba(0,0,0,0.61); 
+  box-shadow: 2px 14px 35px -10px rgba(0,0,0,0.61);*/
+  -webkit-box-shadow: -1px 3px 26px -12px rgba(0,0,0,0.84); 
+box-shadow: -1px 3px 26px -12px rgba(0,0,0,0.84);
+}

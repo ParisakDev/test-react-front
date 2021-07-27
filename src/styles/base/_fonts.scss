@@ -1,0 +1,27 @@
+@mixin font-face($font-name, $file-name, $format ,$weight: normal, $style: normal) {
+    @font-face {
+      font-family: $font-name;
+      font-display: swap;
+      font-weight: $weight;
+      font-style: $style;
+      src: url($file-name) format($format);
+    }
+  }
+
+@include font-face(
+  "harryp",
+  "../../assets/fonts/harryp.ttf",
+  "truetype"
+);
+
+@include font-face(
+  "bebas",
+  "../../assets/fonts/bebas.woff",
+  "woff"
+);
+
+@include font-face(
+  "futura",
+  "../../assets/fonts/futura.woff",
+  "woff"
+);

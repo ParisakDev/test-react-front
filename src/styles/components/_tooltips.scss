@@ -1,0 +1,16 @@
+.tooltips{
+    font-size: 11px;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    line-height: 11px;
+    background-color: map-get($color, c-2 );
+    position: absolute;
+    bottom: 0;
+    left: -8px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $ff-futura;
+}

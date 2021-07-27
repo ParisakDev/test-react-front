@@ -1,0 +1,118 @@
+*{
+    box-sizing: border-box;
+}
+.main{
+    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
+}
+.ff {
+    &-harry{
+        font-family: $ff-harry;
+    }
+    &-bebas{
+        font-family:$ff-bebas;
+    }
+    &-futura{
+        font-family:$ff-futura;
+    }
+}
+.w{
+    &-100{
+        width: 100%;
+    }
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+.p-r{
+    position: relative;
+}
+.ls-n{
+    list-style: none;
+}
+.td{
+    &-n{
+        text-decoration: none;
+    }
+}
+.mt{
+    &-a{
+        margin-top: auto;
+    }
+}
+.w-s-nw{
+    white-space: nowrap;
+}
+.ta{
+    &-c{
+        text-align: center
+    }
+    &-r{
+        text-align: right;
+    }
+}
+.f{
+    &-r{
+        float: right;
+    }
+}
+.tt{
+    &-u{
+        text-transform: uppercase;
+    }
+}
+.mx{
+   &-a{
+       margin-left:auto;
+       margin-right: auto; 
+   } 
+}
+.d{
+    &-f{
+        display: flex;
+    }
+    &-b{
+        display: block;
+    }
+    &-n{
+        display: none;
+    }
+  
+    @media only screen and (max-width: $md) {
+        &-md-n{
+                display: none;
+        }
+        &-md-b{
+            display: block;
+        }
+    }
+}
+.fd{
+    &-r{
+        flex-direction: row;
+    }
+    &-c{
+        flex-direction: column;
+    }
+}
+.w{
+    &-100{
+        width: 100%;
+    }
+}
+.jc{
+    &-c{
+        justify-content: center;
+    }
+    &-sa{
+        justify-content: space-around;
+    }
+    &-sb{
+        justify-content: space-between;
+    }
+}
+p,h1{
+    margin: 0;
+}

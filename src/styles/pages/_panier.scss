@@ -1,0 +1,112 @@
+.panier{
+    width: 100%;
+    border-radius: $radius-l;
+    padding: $base*3 $base*2;
+    background-color: map-get($color, c-w ); 
+    width: 80%;
+
+    .contrib,.content{
+        padding: $base*4;
+    }
+    .contrib{
+        width: 50%;
+        background-color: map-get($color, cg-5 );
+        .list{
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            height: 50vh;
+            @include overflow-y;
+            .item{
+                margin: $base 0;
+                padding: $base;
+                border-bottom: 1px solid map-get($color, cg-1 );
+                height: 147px;
+                @include transition;
+                &.is-fx{
+                     overflow: hidden;
+                     height: 0px;
+                     padding: 0 $base;
+                     border: 0px solid transparent;
+                } 
+                .link{
+                    height: 130px;
+                    min-width: 110px;
+                    max-width: 110px;
+                    picture{
+                        height: 100%;
+                    }
+                    .img{
+                       height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+                h3{
+                    margin: 0;
+                    padding:  0 $base;
+                }
+            }
+        }
+
+    }
+    .content{
+        width: 50%;
+        flex-direction: column;
+        .list{
+            flex-direction: column;
+            padding:$base 0;
+            @include transition;
+            @include overflow-y;
+            .li{
+
+            }
+        }
+        .total-amount{
+            margin: $base 0;
+            margin-top: auto;
+            p{
+               text-align: right;
+               span{
+                   margin-left: $base;
+                   font-size: 30px;
+               }
+            }
+        }
+    }
+    @media only screen and (max-width: $md) {
+        .contrib{
+            display: none;
+        }
+        .content{
+            width: 100%;
+            .list{
+                margin: $base*3 0;
+            }
+        }
+    }
+    @media only screen and (max-width: 546px) {
+        width: 100%;
+        .content{
+            padding: 0;
+        }
+        .list{
+            .li{
+                margin: $base 0;
+                span{
+                    font-size: 16px;
+                }
+            }
+        }
+        .total-amount{
+            p{
+                font-size: 17px;
+                span{
+                    font-size: 19px !important;
+                }
+            }
+        }
+    }
+}

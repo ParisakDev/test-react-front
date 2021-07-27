@@ -1,0 +1,31 @@
+@each $color-name, $color-value in $color {
+    @if map_has_key($color, $color-name) {
+      .#{$color-name} {
+        color: $color-value;
+      }
+      
+      .b#{$color-name} {
+        background-color: $color-value;
+      }
+    }
+  }
+
+@each $size in $fontSize {
+  .fs-#{$size} {
+    font-size: #{$size*8}px;
+  }
+}
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: ($space * $base);
+    }
+
+    .p#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: ($space * $base);
+    }
+
+  }
+}
+

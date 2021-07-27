@@ -1,0 +1,56 @@
+.banner-ron{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: map-get($color, c-w );
+    margin: $base*3 0;
+    @include box-shadow;
+    .cover{
+        width: 50%;
+
+    }
+    picture{
+        height: 100%;
+        width: 100%
+    }
+    .img{
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+    .side-text{
+        height: 100%;
+        width: 70%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: map-get($color, c-3 );
+        clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    @media only screen and (max-width: $md) {
+        height: 30vh;
+        .cover{
+            width: 50%;
+        }
+        .side-text {
+            width: 70%;
+            p{
+                font-size: 35px;
+            }
+        }
+       
+    }
+    @media only screen and (max-width: 400px) {
+        flex-direction: column;
+        height: min-content;
+        .cover{
+            width: 100%;
+        }
+       .side-text{
+           position: unset;
+           clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+           width: 100%;
+       }  
+    }
+}
